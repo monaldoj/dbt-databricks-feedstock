@@ -30,7 +30,7 @@ requirements:
     - dbt-spark >=1.8.0,<2.0
     - keyring >=23.13.0
     - pandas <2.2.0
-    - pydantic>=1.10.0,<2
+    - pydantic >=1.10.0,<2
 
 test:
   imports:
