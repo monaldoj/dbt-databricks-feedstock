@@ -12,16 +12,16 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
     - setuptools
     - hatchling
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - databricks-sdk ==0.17.0
     - databricks-sql-connector >=3.5.0,<4.0.0
     - dbt-adapters >=1.7.0,<2.0
@@ -39,6 +39,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/databricks/dbt-databricks
